@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+nav li{
+  background-color: white;
+}
+li{
+  color: blue;
+  display: inline;
+  margin: 30px;
+}

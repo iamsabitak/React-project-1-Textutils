@@ -1,24 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
 
+let name = "Sabita"
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React with Sabbu
-        </a>
-      </header>
-    </div>
+    <>
+<nav>
+   <li>Home</li>
+    <li>About</li>
+    <li>Contact</li>
+    <li>Services</li>
+</nav>
+<h1>Hello {name}</h1>
+<div className="container">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi minus unde laudantium aspernatur? Nam atque a optio, veniam fugit cupiditate autem eum asperiores, aut impedit porro cum facere quaerat officia?
+</div>
+    </>
   );
 }
 
