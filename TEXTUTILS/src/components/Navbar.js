@@ -17,7 +17,7 @@ import React from 'react';
 // #region component
 const propTypes = {};
 
-const defaultProps = {};
+// const defaultProps = {};
 
 /**
  * 
@@ -50,13 +50,15 @@ const Navbar = (props) => {
 
 
 Navbar.propTypes = {
-    title: propTypes.string.isRequired,
-    Hometext: propTypes.string.isRequired,
+  title: propTypes.string,
+  Hometext: propTypes.string,
+    // title: propTypes.string.isRequired,
+    // Hometext: propTypes.string.isRequired,
     };
-    // Navbar.defaultProps = {
-    //     title: "textutils2",
-    // Hometext: "Home2"
-    // };
+//     Navbar.defaultProps = {
+//         title: "textutils2",
+//     Hometext: "Home2"
+//     };
 
 
 // Navbar.propTypes = propTypes;
