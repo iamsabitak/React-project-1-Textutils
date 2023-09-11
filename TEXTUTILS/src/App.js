@@ -10,7 +10,7 @@ function App() {
       <div className="textform my-3">
 
 
-      <Textform heading = "Enter the text to analyse below"/>
+      <Textform id="box" heading = "Enter the text to analyse below"/>
         </div>
     </>
   );
