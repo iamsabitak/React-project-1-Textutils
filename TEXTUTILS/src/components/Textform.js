@@ -25,13 +25,11 @@ setText(event.target.value)
   
 return (
   <>
-  <div>
+  <div className='container' style={{color: props.mode === 'dark'?' white': 'black'}}>
     <h1>{props.heading}</h1>
   <div className="mb-3">
    
-    <textarea  style={{
-      backgroundColor:'black',color:'white',fontSize:'2rem'
-    }}
+    <textarea  style={{color: props.mode === 'dark'?' white': 'black',backgroundColor: props.mode === 'dark'?' black': 'white'}}
     className="form-control" onChange={handleonChange} value={text} id="boxform" rows="8"></textarea>
     <button style={{margin:'2px',padding:'2px'}} className="btn btn-warning mx-1" onClick={handleUpClick}>Convert to UpperCase</button>
     <button style={{margin:'2px',padding:'2px'}} className="btn btn-warning mx-1" onClick={handleloClick}>Convert to LowerCase</button>
@@ -39,7 +37,7 @@ return (
 
   </div>
   </div>
-  <div className="container my-4">
+  <div className="container my-4" style={{color: props.mode === 'dark'?' white': 'black'}}>
     <h1>The Summary is Here</h1>
     <p> {text.split(" ").length} words and {text.length} charachters</p>
     <p>{0.008 * text.split (" ").length} Minutes read</p>

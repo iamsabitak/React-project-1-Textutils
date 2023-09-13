@@ -6,27 +6,28 @@ function About() {
         document.querySelector('body').style.backgroundColor = 'black';
         document.querySelector('body').style.color= 'white';
     }
-    const [myStyle,setmyStyle]=useState({border:'1px solid blue',
-    padding:'1rem',
+    const [myStyle,setmyStyle]=useState({
+      // border:'1px solid blue',
+    // padding:'1rem',
     background:'black',
     color:'white'
 })
-const [btntext,setBtnText] = useState( "Enable Dark Mode")
+const [btntext,setBtnText] = useState("Enable light Mode")
     const toggleStyle = ()=>{
-        if (myStyle.color==='white'){
+        if (myStyle.color === 'white'){
             setmyStyle({
                 color: 'black',
                  backgroundColor: 'white',
-                 border:'2px solid white'
+                //  border:'1px solid black'
         })
-        setBtnText ("Enable LIght Mode")
+        setBtnText ("Enable Dark Mode")
         }
         else{
             setmyStyle({
                 color: 'white',
                  backgroundColor: 'black'
         })
-        setBtnText ("Enable dark Mode")
+        setBtnText ("Enable Light Mode")
     }
 
 } 
@@ -129,8 +130,8 @@ const [btntext,setBtnText] = useState( "Enable Dark Mode")
         </div>
       </div>
       <div className="button">
-      <button className="btn btn-dark my-3" onClick={backgroundcolor} >Enable dark mode of background</button>
-      <button className="btn btn-dark my-3" onClick={toggleStyle}>Enable dark mode of text</button>
+      <button className="btn btn-dark my-3px" onClick={backgroundcolor} >Enable dark mode of background</button>
+      <button className="btn btn-dark " onClick={toggleStyle}>{btntext}</button>
       </div>
 
     </div>
