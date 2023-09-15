@@ -4,7 +4,7 @@ import { useState  } from "react";
 import Textform from "./components/Textform";
 // import About from "./components/About";
 function App() {
-const [mode,setMode] = useState('light');
+const [mode,setMode] = useState('light')
  const toggleMode=()=>{
   if (mode==='light'){
 setMode('dark')
