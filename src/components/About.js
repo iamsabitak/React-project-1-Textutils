@@ -2,42 +2,41 @@ import React from "react";
 import { useState } from "react";
 
 function About() {
-    let backgroundcolor =()=>{
-        document.querySelector('body').style.backgroundColor = 'black';
-        document.querySelector('body').style.color= 'white';
-    }
-    const [myStyle,setmyStyle]=useState({
-      // border:'1px solid blue',
+  let backgroundcolor = () => {
+    document.querySelector("body").style.backgroundColor = "black";
+    document.querySelector("body").style.color = "white";
+  };
+  const [myStyle, setmyStyle] = useState({
+    // border:'1px solid blue',
     // padding:'1rem',
-    background:'black',
-    color:'white'
-})
-const [btntext,setBtnText] = useState("Enable light Mode")
-    const toggleStyle = ()=>{
-        if (myStyle.color === 'white'){
-            setmyStyle({
-                color: 'black',
-                 backgroundColor: 'white',
-                //  border:'1px solid black'
-        })
-        setBtnText ("Enable Dark Mode")
-        }
-        else{
-            setmyStyle({
-                color: 'white',
-                 backgroundColor: 'black'
-        })
-        setBtnText ("Enable Light Mode")
+    background: "black",
+    color: "white",
+  });
+  const [btntext, setBtnText] = useState("Enable light Mode");
+  const toggleStyle = () => {
+    if (myStyle.color === "white") {
+      setmyStyle({
+        color: "black",
+        backgroundColor: "white",
+        //  border:'1px solid black'
+      });
+      setBtnText("Enable Dark Mode");
+    } else {
+      setmyStyle({
+        color: "white",
+        backgroundColor: "black",
+      });
+      setBtnText("Enable Light Mode");
     }
-
-} 
+  };
   return (
     <div className="container">
-        <h1>About Us</h1>
+      <h1>About Us</h1>
       <div className="accordion" id="accordionExample" style={myStyle}>
-        <div className="accordion-item"style={myStyle}>
+        <div className="accordion-item" style={myStyle}>
           <h2 className="accordion-header" id="headingOne">
-            <button style={myStyle}
+            <button
+              style={myStyle}
               className="accordion-button"
               type="button"
               data-bs-toggle="collapse"
@@ -48,7 +47,7 @@ const [btntext,setBtnText] = useState("Enable light Mode")
               Accordion Item #1
             </button>
           </h2>
-          <div 
+          <div
             id="collapseOne"
             className="accordion-collapse collapse show"
             aria-labelledby="headingOne"
@@ -68,7 +67,8 @@ const [btntext,setBtnText] = useState("Enable light Mode")
         </div>
         <div className="accordion-item" style={myStyle}>
           <h2 className="accordion-header" id="headingTwo">
-            <button style={myStyle}
+            <button
+              style={myStyle}
               className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
@@ -99,7 +99,8 @@ const [btntext,setBtnText] = useState("Enable light Mode")
         </div>
         <div className="accordion-item" style={myStyle}>
           <h2 className="accordion-header" id="headingThree">
-            <button style={myStyle}
+            <button
+              style={myStyle}
               className="accordion-button collapsed"
               type="button"
               data-bs-toggle="collapse"
@@ -130,13 +131,15 @@ const [btntext,setBtnText] = useState("Enable light Mode")
         </div>
       </div>
       <div className="button">
-      <button className="btn btn-dark my-3px" onClick={backgroundcolor} >Enable dark mode of background</button>
-      <button className="btn btn-dark " onClick={toggleStyle}>{btntext}</button>
+        <button className="btn btn-dark my-3px" onClick={backgroundcolor}>
+          Enable dark mode of background
+        </button>
+        <button className="btn btn-dark " onClick={toggleStyle}>
+          {btntext}
+        </button>
       </div>
-
     </div>
   );
-
 }
 
 export default About;
