@@ -3,7 +3,8 @@ import Navbar from "./components/Navbar";
 import { useState  } from "react";
 import Textform from "./components/Textform";
 import Alert from "./components/Alert";
-// import About from "./components/About";
+import About from "./components/About";
+import { BrowserRouter as Router , Route ,Switch} from "react-router-dom";
 function App() {
 const [mode,setMode] = useState('light');
  const toggleMode=()=>{
@@ -30,16 +31,23 @@ setAlert(null)
 }
   return (
     <>
+    <Router>
       <Navbar title="Textutils " Hometext= " Home " mode={mode} toggleMode={toggleMode}/>
       {/* <Navbar/> */}
       <Alert alert={alert}/>
       <div className="textform my-3">
-        <Textform showAlert = {showAlert} id="box" heading = "Enter the text to analyse below" mode={mode}/>
-      </div>
-      <div>
-        {/* <About/> */}
-          
-      </div>
+      <Switch>
+<Route exact path="/about">
+  <About/>
+</Route>
+<Route exact path="/">
+   <Textform showAlert = {showAlert} id="box" heading = "Enter the text to analyse below" mode={mode}/>
+</Route>
+</Switch>
+</div>  
+</Router>
+
+      
     </>
   );
 }
