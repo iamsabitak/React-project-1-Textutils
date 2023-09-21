@@ -1,37 +1,41 @@
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 
-function About() {
-  let backgroundcolor = () => {
-    document.querySelector("body").style.backgroundColor = "black";
-    document.querySelector("body").style.color = "white";
-  };
-  const [myStyle, setmyStyle] = useState({
-    // border:'1px solid blue',
-    // padding:'1rem',
-    background: "black",
-    color: "white",
-  });
-  const [btntext, setBtnText] = useState("Enable light Mode");
-  const toggleStyle = () => {
-    if (myStyle.color === "white") {
-      setmyStyle({
-        color: "black",
-        backgroundColor: "white",
-        //  border:'1px solid black'
-      });
-      setBtnText("Enable Dark Mode");
-    } else {
-      setmyStyle({
-        color: "white",
-        backgroundColor: "black",
-      });
-      setBtnText("Enable Light Mode");
-    }
-  };
+function About(props) {
+  const myStyle = {
+    color:props.mode === 'dark'?'white':'black',
+    backgroundColor:props.mode === 'dark'? 'black':'white'
+  }
+  // let backgroundcolor = () => {
+  //   document.querySelector("body").style.backgroundColor = "black";
+  //   document.querySelector("body").style.color = "white";
+  // };
+  // const [myStyle, setmyStyle] = useState({
+  //   // border:'1px solid blue',
+  //   // padding:'1rem',
+  //   background: "white",
+  //   color: "black",
+  // });
+  // const [btntext, setBtnText] = useState("Enable light Mode");
+  // const toggleStyle = () => {
+  //   if (myStyle.color === "white") {
+  //     setmyStyle({
+  //       color: "black",
+  //       backgroundColor: "white",
+  //       //  border:'1px solid black'
+  //     });
+  //     setBtnText("Enable Dark Mode");
+  //   } else {
+  //     setmyStyle({
+  //       color: "white",
+  //       backgroundColor: "black",
+  //     });
+  //     setBtnText("Enable Light Mode");
+    // }
+  // };
   return (
     <div className="container">
-      <h1>About Us</h1>
+      <h1 style={myStyle} >About Us</h1>
       <div className="accordion" id="accordionExample" style={myStyle}>
         <div className="accordion-item" style={myStyle}>
           <h2 className="accordion-header" id="headingOne">
@@ -44,7 +48,7 @@ function About() {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Accordion Item #1
+              Analyze Your text
             </button>
           </h2>
           <div
@@ -54,14 +58,8 @@ function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              Textutils gives you a way to analyze your text quickly and
+              efficiently. Be it word count, character count or
             </div>
           </div>
         </div>
@@ -76,7 +74,7 @@ function About() {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Accordion Item #2
+              Free to use
             </button>
           </h2>
           <div
@@ -86,14 +84,10 @@ function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              Textutils is a free character counter tool that provides instant
+              character count & word count statistics for a given text.
+              Textutils reports the number of words and characters. Thus it is
+              suitable for writing text with word/ character limit.
             </div>
           </div>
         </div>
@@ -108,7 +102,7 @@ function About() {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Accordion Item #3
+              Browser Compatible
             </button>
           </h2>
           <div
@@ -118,26 +112,18 @@ function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the third item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              This word counter software works in any web browsers such as
+              Chrome, Firefox, Internet Explorer, Safari, Opera. It suits to
+              count characters in facebook, blog, books, excel document, pdf
+              document, essays, etc.
             </div>
           </div>
         </div>
       </div>
-      <div className="button">
-        <button className="btn btn-dark my-3px" onClick={backgroundcolor}>
-          Enable dark mode of background
-        </button>
-        <button className="btn btn-dark " onClick={toggleStyle}>
-          {btntext}
-        </button>
-      </div>
+      {/* <div className="button">
+        <button className="btn btn-dark my-3px" onClick={backgroundcolor}>Enable dark mode of background</button>
+        <button className="btn btn-dark " onClick={toggleStyle}>{btntext} </button>
+      </div> */}
     </div>
   );
 }

@@ -5,6 +5,7 @@ import Textform from "./components/Textform";
 import Alert from "./components/Alert";
 import About from "./components/About";
 import { BrowserRouter as Router , Route ,Switch} from "react-router-dom";
+
 function App() {
 const [mode,setMode] = useState('light');
  const toggleMode=()=>{
@@ -38,7 +39,7 @@ setAlert(null)
       <div className="textform my-3">
       <Switch>
 <Route exact path="/about">
-  <About/>
+  <About mode={mode} />
 </Route>
 <Route exact path="/">
    <Textform showAlert = {showAlert} id="box" heading = "Enter the text to analyse below" mode={mode}/>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const propTypes = {};
 
-// const defaultProps = {};
+//  const defaultProps = {};
 
 const Navbar = (props) => {
     return (<nav className={`navbar navbar-expand-lg navbar-${props.mode}  bg-boy-tertiary bg-${props.mode}`}>
